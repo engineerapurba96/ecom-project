@@ -106,6 +106,33 @@
       "description": "Noise smart watch for man and women both",
       "image": "https://www.reliancedigital.in/medias/Noise-Colorfit-Pro-2-Smart-Watch-491900986-i-1-1200Wx1200H-300Wx300H?context=bWFzdGVyfGltYWdlc3w1MDc0NXxpbWFnZS9qcGVnfGltYWdlcy9oYzkvaDdjLzk1OTE4MjA3NDY3ODIuanBnfDA3MjZlMzkzOTExYzMyNzk5Y2YzOTk0MWFkMjc5YjE5OTlkMDE4NzYzYTg1YzQ2YmNjZjMxYzc5ZDJiYjBlNDg",
       "id": 7
+    },
+    {
+      "id": "9e48",
+      "name": "",
+      "price": "",
+      "category": "",
+      "color": "",
+      "description": "",
+      "image": ""
+    },
+    {
+      "id": "3a6c",
+      "name": "",
+      "price": "",
+      "category": "",
+      "color": "",
+      "description": "",
+      "image": ""
+    },
+    {
+      "id": "0867",
+      "name": "",
+      "price": "",
+      "category": "",
+      "color": "",
+      "description": "",
+      "image": ""
     }
   ],
   "users": [
@@ -132,6 +159,12 @@
       "email": "tony@user.com",
       "password": "abc123",
       "id": 4
+    },
+    {
+      "id": "41f4",
+      "name": "Apurba Ranjan Parida",
+      "email": "apurbaranjan.tech@gmail.com",
+      "password": "123"
     }
   ],
   "cart": [
@@ -174,14 +207,6 @@
       "address": "noida sector x",
       "contact": "8877",
       "totalPrice": 6100,
-      "userId": 1,
-      "id": 3
-    },
-    {
-      "email": "aanil@test.com",
-      "address": "noida sector x",
-      "contact": "8877",
-      "totalPrice": 9100,
       "userId": 1,
       "id": 3
     }

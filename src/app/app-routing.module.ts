@@ -23,37 +23,44 @@ const routes: Routes = [
     path: 'seller-auth',
   },
   {
-    component:SellerHomeComponent,
-    path:'seller-home',
-    canActivate:[AuthGuard]
-  },{
-    component:SellerAddProductComponent,
-    path:'seller-add-product',
-    canActivate:[AuthGuard]
-  },{
-    component:SellerUpdateProductComponent,
-    path:'seller-update-product/:id',
-    canActivate:[AuthGuard]
+    component: SellerHomeComponent,
+    path: 'seller-home',
+    canActivate: [AuthGuard],
+  },
+  {
+    component: SellerAddProductComponent,
+    path: 'seller-add-product',
+    canActivate: [AuthGuard],
+  },
+  {
+    component: SellerUpdateProductComponent,
+    path: 'seller-update-product/:id',
+    canActivate: [AuthGuard],
   },
   {
     component: SearchComponent,
-    path:'search/:query'
-  },{
-    component:ProductDetailsComponent,
-    path:'details/:productId'
-  },{
-    component:UserAuthComponent,
-    path:'user-auth'
-  },{
-    component:CartPageComponent,
-    path:'cart-page'
-  },{
-    component:CheckoutComponent,
-    path:'checkout'
-  },{
-    component:MyOrdersComponent,
-    path:'my-orders'
-  }
+    path: 'search/:query',
+  },
+  {
+    component: ProductDetailsComponent,
+    path: 'details/:productId',
+  },
+  {
+    component: UserAuthComponent,
+    path: 'user-auth',
+  },
+  {
+    component: CartPageComponent,
+    path: 'cart-page',
+  },
+  {
+    component: CheckoutComponent,
+    path: 'checkout',
+  },
+  {
+    component: MyOrdersComponent,
+    path: 'my-orders',
+  },
 ];
 
 @NgModule({

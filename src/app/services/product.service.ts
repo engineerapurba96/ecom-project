@@ -7,7 +7,7 @@ import { cart, order, product } from '../data-type';
 })
 export class ProductService {
   cartData = new EventEmitter<product[] | []>();
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
   addProduct(data: product) {
     return this.http.post('http://localhost:3000/products', data);
   }
@@ -87,7 +87,9 @@ export class ProductService {
   currentCart() {
     let userStore = localStorage.getItem('user');
     let userData = userStore && JSON.parse(userStore);
-    return this.http.get<cart[]>('http://localhost:3000/cart?userId=' + userData.id);
+    return this.http.get<cart[]>(
+      'http://localhost:3000/cart?userId=' + userData.id
+    );
   }
 
   orderNow(data: order) {
@@ -96,18 +98,20 @@ export class ProductService {
   orderList() {
     let userStore = localStorage.getItem('user');
     let userData = userStore && JSON.parse(userStore);
-    return this.http.get<order[]>('http://localhost:3000/orders?userId=' + userData.id);
+    return this.http.get<order[]>(
+      'http://localhost:3000/orders?userId=' + userData.id
+    );
   }
 
   deleteCartItems(cartId: number) {
-    return this.http.delete('http://localhost:3000/cart/' + cartId).subscribe((result) => {
-      this.cartData.emit([]);
-    })
+    return this.http
+      .delete('http://localhost:3000/cart/' + cartId)
+      .subscribe((result) => {
+        this.cartData.emit([]);
+      });
   }
 
-  cancelOrder(orderId:number){
-    return this.http.delete('http://localhost:3000/orders/'+orderId)
-
+  cancelOrder(orderId: number) {
+    return this.http.delete('http://localhost:3000/orders/' + orderId);
   }
-
 }
