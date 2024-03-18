@@ -1,0 +1,122 @@
+<form [formGroup]="myForm" (ngSubmit)="OnSubmit()">
+  <div class="form-group">
+    <label for="cname">Company Name </label>
+    <input
+      type="text"
+      class="form-control"
+      id="cname"
+      name="cname"
+      formControlName="companyname"
+    />
+    <div
+      *ngIf="
+        myForm.get('companyname')?.invalid &&
+        myForm.get('companyname')?.touched &&
+        myForm.get('companyname')?.dirty
+      "
+      class="text-danger"
+    >
+      <div *ngIf="myForm.get('companyname')?.errors?.['required']">
+        Please Enter Name
+      </div>
+      <div *ngIf="myForm.get('companyname')?.errors?.['minlength']">
+        Company Name must be at least 4 characters
+      </div>
+      <div *ngIf="myForm.get('companyname')?.errors?.['maxlength']">
+        Company Name cannot exceed 30 characters
+      </div>
+      <div *ngIf="myForm.get('companyname')?.errors?.['pattern']">
+        Invalid characters entered
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="caname">Admin Name </label>
+    <input
+      type="text"
+      class="form-control"
+      id="caname"
+      name="caname"
+      formControlName="adminname"
+    />
+    <div
+    *ngIf="
+      myForm.get('adminname')?.invalid &&
+      myForm.get('adminname')?.touched &&
+      myForm.get('adminname')?.dirty
+    "
+    class="text-danger"
+  >
+    <div *ngIf="myForm.get('adminname')?.errors?.['required']">
+      Please Enter Admin Name
+    </div>
+    <div *ngIf="myForm.get('adminname')?.errors?.['minlength']">
+      Admin Name must be at least 4 characters
+    </div>
+    <div *ngIf="myForm.get('adminname')?.errors?.['maxlength']">
+      Admin Name cannot exceed 30 characters
+    </div>
+    <div *ngIf="myForm.get('adminname')?.errors?.['pattern']">
+      Invalid characters entered
+    </div>
+  </div>
+  </div>
+  <div class="form-group">
+    <label for="email">Email </label>
+    <input
+      type="email"
+      class="form-control"
+      id="email"
+      name="email"
+      formControlName="email"
+    />
+    <!-- Error Messages for Email -->
+    <div *ngIf="myForm.get('email')?.invalid && (myForm.get('email')?.touched || myForm.get('email')?.dirty)" class="text-danger">
+      <!-- Display error message for required field -->
+      <div *ngIf="myForm.get('email')?.errors?.['required']">Email is required</div>
+      <!-- Display error message for invalid email format -->
+      <div *ngIf="myForm.get('email')?.errors?.['email']">Invalid email format</div>
+    </div>
+  </div>
+  
+  <div class="form-group">
+    <label for="mobile">Number </label>
+    <input
+      type="number"
+      class="form-control"
+      id="mobile"
+      name="mobile"
+      formControlName="mobile"
+    />
+    <div
+    *ngIf="
+      myForm.get('mobile')?.invalid &&
+      myForm.get('mobile')?.touched &&
+      myForm.get('mobile')?.dirty
+    "
+    class="text-danger"
+  >
+    <div *ngIf="myForm.get('mobile')?.errors?.['required']">
+        Mobile number is required
+    </div>
+    <div *ngIf="myForm.get('mobile')?.errors?.['minlength']">
+        Invalid mobile number format
+    </div>
+  </div>
+  </div>
+
+  <button type="submit" class="btn btn-primary" [disabled]="myForm.invalid">
+    Submit
+  </button>
+  <div *ngIf="companyRecords.length">
+    <h3>Company Records:</h3>
+    <ul>
+      <li *ngFor="let record of companyRecords">
+        <div>{{record.companyname}}</div>
+        <div>{{record.adminname}}</div>
+        <div>{{record.email}}</div>
+        <div>{{record.mobile}}</div>
+      </li>
+    </ul>
+  </div>
+</form>
